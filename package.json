@@ -1,0 +1,71 @@
+{
+  "name": "react-authorized",
+  "version": "0.0.1",
+  "description": "React components for controlling components rendering.",
+  "author": "Shen Chang",
+  "homepage": "https://github.com/[name]/[repository]",
+  "keywords": [
+    "react",
+    "authorized"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/[name]/[repository].git"
+  },
+  "bugs": {
+    "url": "https://github.com/[name]/[repository]/issues"
+  },
+  "main": "src/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "test": "jest",
+    "build:demo": "webpack",
+    "build:es": "rimraf es && tsc",
+    "start:demo": "webpack-dev-server --hot --historyApiFallback",
+    "start:es": "rimraf es && tsc -w -sourcemap --outDir es"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "ignore": [
+      "node_modules"
+    ],
+    "linters": {
+      "src/*{ts,tsx}": [
+        "jest",
+        "git add"
+      ]
+    }
+  },
+  "license": "MIT",
+  "sideEffects": false,
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@types/node": "^10.12.21",
+    "@types/react": "^16.8.1",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.5",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.3.1",
+    "jest": "^24.1.0",
+    "lint-staged": "^8.1.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router-dom": "^4.3.1",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.3.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
