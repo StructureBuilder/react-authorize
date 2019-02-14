@@ -4,10 +4,10 @@ node_js:
   - "11"
 
 install:
- - npm install
+  - npm install
 
 script:
- - npm test
+  - npm test
 
 after_success:
-- npm run codecov
+  - npm run codecov
