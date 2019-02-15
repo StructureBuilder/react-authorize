@@ -1,22 +1,21 @@
 {
-  "name": "react-authorized",
-  "version": "0.1.0",
+  "name": "react-authorize",
+  "version": "0.1.1",
   "description": "React components for controlling components rendering.",
   "author": "Shen Chang",
-  "homepage": "https://github.com/Sam618/react-authorized",
+  "homepage": "https://github.com/Sam618/react-authorize",
   "keywords": [
     "react",
-    "authorized"
+    "authorize"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sam618/react-authorized.git"
+    "url": "git+https://github.com/Sam618/react-authorize.git"
   },
   "bugs": {
-    "url": "https://github.com/Sam618/react-authorized/issues"
+    "url": "https://github.com/Sam618/react-authorize/issues"
   },
-  "main": "src/index.js",
-  "module": "es/index.js",
+  "main": "es/index.js",
   "scripts": {
     "clean": "rimraf es",
     "test": "jest",
