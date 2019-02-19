@@ -1,7 +1,4 @@
 import Authorized from './components/Authorized';
-import {secured} from './utils/secured';
-import {renderAuthorized} from './utils/renderAuthorized';
+import {secured, check, renderAuthorized} from './utils';
 
-export {Authorized, secured};
-
-export default renderAuthorized;
+export {Authorized, secured, check, renderAuthorized};

@@ -55,45 +55,31 @@ export function checkPermissions(
     return bool ? children : unauthorized;
   }
 
-  /*
-   * permissions = [] Satisfying one of the permissions
-   * authority = []
-   */
-  if (Array.isArray(permissions)) {
-    if (Array.isArray(authority)) {
-      for (const value of authority) {
-        if (permissions.indexOf(value) !== -1) {
-          return children;
-        }
-      }
-
-      /*
-      * permissions = [] Satisfying one of the permissions
-      * authority = string
-      */
-    } else if (permissions.indexOf(authority) !== -1) {
-      return children;
-    }
-
-    return unauthorized;
-  }
-
   const type = typeof permissions;
 
   if (
     type === 'string' ||
     type === 'number' ||
-    type === 'symbol'
+    type === 'symbol' ||
+    Array.isArray(permissions)
   ) {
     /*
-     * permissions = string
-     * authority = [] Satisfying one of the permissions
+     * Intersection
+     * permissions = [] Satisfying one of the permissions
+     * authority = []
      */
-    if (
-      (Array.isArray(authority) && authority.indexOf(permissions) !== -1) ||
-      permissions === authority
-    ) {
-      return children;
+    if (!Array.isArray(permissions)) {
+      permissions = [permissions];
+    }
+
+    if (!Array.isArray(authority)) {
+      authority = [authority];
+    }
+
+    for (const value of authority) {
+      if (permissions.indexOf(value) !== -1) {
+        return children;
+      }
     }
 
     return unauthorized;
@@ -102,7 +88,7 @@ export function checkPermissions(
   warn(
     '[react-authorize]: Unsupported parameters. \n' +
     'permissions support {Array<string | number | symbol> | string | number | symbol | Promise | (authority => boolean | Promise)} parameter. \n' +
-    'authority support {string | number | symbol} parameter.'
+    'authority support {Array<string | number | symbol> | string | number | symbol} parameter.'
   );
 
   return null;

@@ -4,7 +4,7 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
-import renderAuthorized from "../../../../es";
+import {renderAuthorized} from "../../../../es";
 import One from '../../pages/One';
 import Two from '../../pages/Two';
 import Three from '../../pages/Three';
@@ -14,8 +14,8 @@ const Loading = () => (
   <div>Loading...</div>
 );
 
-const {secured} = renderAuthorized({
-  permissions: 'admin',
+const {check} = renderAuthorized({
+  permissions: undefined,
 });
 
 // const AuthorizedRoute = props => (
@@ -36,17 +36,18 @@ export default class BasicLayout extends Component {
 
   changeAuthority = () => {
     this.setState(({authority}) => ({
-      authority: authority === 'admin' ? 'user' : 'admin',
+      authority: authority === 'admin' ? undefined : 'admin',
     }));
   }
 
   render() {
     const {authority} = this.state;
-    const AuthorizedRoute = secured({
+    const AuthorizedRoute = check({
       authority,
       unauthorized: <Unauthorized />,
       loading: <Loading />,
-    })(() => <Route path="/three" component={Three} />);
+      children: <Route path="/three" component={Three} />,
+    });
 
     return (
       <div>
@@ -67,7 +68,7 @@ export default class BasicLayout extends Component {
           <Switch>
             <Route path="/one" component={One} />
             <Route path="/two" component={Two} />
-            <AuthorizedRoute />
+            {AuthorizedRoute}
           </Switch>
         </div>
       </div>

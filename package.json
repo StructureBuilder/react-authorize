@@ -1,7 +1,7 @@
 {
   "name": "react-authorize",
   "version": "0.1.0",
-  "description": "React components for controlling components rendering.",
+  "description": "Determine the render of related React Components by comparing existing permissions with access permissions.",
   "author": "Shen Chang",
   "homepage": "https://github.com/Sam618/react-authorize",
   "keywords": [
@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "pre-push": "npm run test"
     }
   },
   "license": "MIT",
@@ -43,6 +43,7 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.0.5",
     "codecov": "^3.2.0",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "html-webpack-plugin": "^3.2.0",
@@ -57,5 +58,10 @@
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.1.14"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

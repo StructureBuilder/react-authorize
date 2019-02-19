@@ -3,19 +3,19 @@ import Authorized from '../components/Authorized';
 import {IOptions} from '../interface';
 
 /**
- * Annotation
+ * Authorized form of function
  *
  * @export
- * @template P
  * @param {IOptions} options
  * @returns
  */
-export function secured<P = {}>(options: IOptions) {
-  return (Component: React.SFC<P> | React.ComponentClass<P>) => (props: P) => (
+export function check(options: IOptions): React.ReactElement<any> {
+  const {children} = options;
+  return (
     <Authorized
       {...options}
     >
-      <Component {...props} />
+      {children}
     </Authorized>
   );
 }
