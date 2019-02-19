@@ -1,6 +1,6 @@
 # react-authorize
 
-[![Build Status](https://travis-ci.org/Sam618/react-authorize.svg?branch=master)](https://travis-ci.org/Sam618/react-authorized) [![codecov](https://codecov.io/gh/Sam618/react-authorize/branch/master/graph/badge.svg)](https://codecov.io/gh/Sam618/react-authorize)
+[![Build Status](https://travis-ci.org/Sam618/react-authorize.svg?branch=master)](https://travis-ci.org/Sam618/react-authorized) [![codecov](https://codecov.io/gh/Sam618/react-authorize/branch/master/graph/badge.svg)](https://codecov.io/gh/Sam618/react-authorize) [![license](https://img.shields.io/github/license/Sam618/react-authorize.svg?style=flat)](https://github.com/Sam618/react-authorize/blob/master/LICENSE) ![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react-authorize.svg?style=flat) [![downloads](https://img.shields.io/npm/dm/react-authorize.svg?style=flat)](https://www.npmjs.com/package/react-authorize) [![npm](https://img.shields.io/npm/v/react-authorize.svg?style=flat)](https://www.npmjs.com/package/react-authorize) [![typescript](https://img.shields.io/badge/language-typescript-blue.svg)](https://www.typescriptlang.org/) [![dependencies](https://img.shields.io/badge/dependencies-none-4dc71f.svg)](https://www.npmjs.com/package/react-authorize)
 
 Determine the presentation of related React Components by comparing existing permissions with access permissions.
 
