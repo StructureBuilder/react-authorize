@@ -366,3 +366,7 @@ Changes are tracked in the [CHANGELOG.md](https://github.com/Sam618/react-author
 
 ## License
 react-authorize is available under the [MIT](https://github.com/Sam618/react-authorize/blob/master/LICENSE) License.
+
+
+## Special thanks
+[Ant Design Pro](https://github.com/ant-design/ant-design-pro)

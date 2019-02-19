@@ -1,6 +1,6 @@
 {
   "name": "react-authorize",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Determine the render of related React Components by comparing existing permissions with access permissions.",
   "author": "Shen Chang",
   "homepage": "https://github.com/Sam618/react-authorize",
